@@ -1,0 +1,133 @@
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #2563eb;
+}
+
+/* ✅ Limit styles to the chatbot only */
+#chatWrapper,
+#chatWrapper * {
+  box-sizing: border-box;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Chatbot container */
+#chatWrapper .chat-container {
+  width: 100%;
+  max-width: 320px;
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+}
+
+#chatWrapper h1 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+#chatWrapper .chat-window {
+  height: 320px;
+  overflow-y: auto;
+  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid #e6e9ef;
+  background: linear-gradient(180deg, #fff, #fbfdff);
+}
+
+#chatWrapper .msg {
+  margin-bottom: 10px;
+  max-width: 85%;
+  line-height: 1.4;
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+#chatWrapper .msg.user {
+  background: #e6f0ff;
+  margin-left: auto;
+  text-align: right;
+}
+
+#chatWrapper .msg.bot {
+  background: #f1f5f9;
+  margin-right: auto;
+}
+
+#chatWrapper .input-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+#chatWrapper .input-row input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #e6e9ef;
+  font-size: 1rem;
+}
+
+#chatWrapper .input-row button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#chatWrapper .input-row button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Floating wrapper */
+.chat-wrapper {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  z-index: 9999;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+}
+
+/* Floating toggle button */
+.chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border: none;
+  background: #5780fc;
+  color: white;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.chat-toggle img {
+  width: 28px;
+  height: 28px;
+}
+
+.chat-toggle:hover {
+  background: #4a6efb;
+  transform: scale(1.1);
+}
+
+.chat-toggle:active {
+  transform: scale(0.9);
+}
